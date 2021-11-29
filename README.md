@@ -2,6 +2,7 @@
 
 Your coding challenge is described below. Do your best to complete these tasks in the alloted time. If you have any questions about the task, you are free to ask for clarification. 
 
+The repl has been setup to run your code with the following command: `python main.py`
 ```
 Implement a cache that will store a fixed number of key, value pairs.
 If adding an item to the cache would cause the cache capacity be exceeded,
