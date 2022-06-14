@@ -3,7 +3,7 @@ test.py
 
 This file provides a simple test of correctness for your solution. Tests are not 
 required in this coding challenge. If using unit tests helps you, you can use the
-Python unittest module which is supported by repl.it
+Python unittest module which is supported by repl.it.
 """
 from cache import Cache
 
