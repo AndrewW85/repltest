@@ -11,7 +11,7 @@ function has been provided to illistrate the class and method names and signatur
 You are free to implement your solution however you like as long as the API does not
 change. At the end, test() will be run to verify the correctness of your solution
 """
-from cache import Cach
+from cache import Cache
 
 
 def main():
