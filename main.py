@@ -31,6 +31,6 @@ def main():
 
   
 if __name__ == "__main__":
-    pnt("Starting main.py")
-    # main()
+    print("Starting main.py")
+    main()
     print("Done")
