@@ -16,21 +16,26 @@ def test():
     cache.put(1, 10)
     assert cache.list() == [(1, 10)], f"{cache.list()} != [10]"
     cache.put(2, 20)
-    assert cache.list() == [(2, 20), (1, 10)], f"{cache.list()} != [20, 10]"
-    cache.get(1)
-    assert cache.list() == [(1, 10), (2, 20)], f"{cache.list()} != [10, 20]"
+    assert cache.list() == [(2, 20), (1, 10)], f"{cache.list()} != [(2, 20), (1, 10)]"
+    assert cache.get(1) == 10
+    assert cache.list() == [(1, 10), (2, 20)], f"{cache.list()} != [(1, 10), (2, 20)]"
     cache.put(3, 30)
-    assert cache.list() == [(3, 30), (1, 10)], f"{cache.list()} != [30, 10]"
-    cache.get(2)
-    assert cache.list() == [(3, 30), (1, 10)], f"{cache.list()} != [30, 10]"
+    assert cache.list() == [(3, 30), (1, 10)], f"{cache.list()} != [(3, 30), (1, 10)]"
+    assert cache.get(2) is None
+    assert cache.list() == [(3, 30), (1, 10)], f"{cache.list()} != [(3, 30), (1, 10)]"
     cache.put(4, 40)
-    assert cache.list() == [(4, 40), (3, 30)], f"{cache.list()} != [40, 30]"
-    cache.get(1)
-    assert cache.list() == [(4, 40), (3, 30)], f"{cache.list()} != [40, 30]"
-    cache.get(3)
-    assert cache.list() == [(3, 30), (4, 40)], f"{cache.list()} != [30, 40]"
-    cache.get(4)
-    assert cache.list() == [(4, 40), (3, 30)], f"{cache.list()} != [40, 30]"
+    assert cache.list() == [(4, 40), (3, 30)], f"{cache.list()} != [(4, 40), (3, 30)]"
+    assert cache.get(1) is None
+    assert cache.list() == [(4, 40), (3, 30)], f"{cache.list()} != [(4, 40), (3, 30)]"
+    assert cache.get(3) == 30
+    assert cache.list() == [(3, 30), (4, 40)], f"{cache.list()} != [(3, 30), (4, 40)]"
+    assert cache.get(4) == 40
+    assert cache.list() == [(4, 40), (3, 30)], f"{cache.list()} != [(4, 40), (3, 30)]"
+    cache.put(3, 300)
+    assert cache.list() == [(3, 300), (4, 40)], f"{cache.list()} != [(3, 300), (4, 40)]"
+    cache.put(3, 3)
+    assert cache.list() == [(3, 3), (4, 40)], f"{cache.list()} != [(3, 3), (4, 40)]"
+        
     print("Test function completed successfully")
 
 if __name__ == "__main__":

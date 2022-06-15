@@ -26,15 +26,15 @@ first element to least recent update as the last element
 
 e.g.
 cache = Cache(2)
-cache.put(1, 10) # cache is {1: 10}
-cache.put(2, 20) # cache is {1: 10, 2: 20}
-cache.list()    # [20, 10]
-cache.get(1)    # return 1
-cache.list()    # [10, 20]
-cache.put(3, 30) # LRU key was 2, evicts key 2, cache is {1: 10, 3: 30}
-cache.get(2)    # returns None (not found)
-cache.put(4, 40) # LRU key was 1, evicts key 1, cache is {4: 40, 3: 30}
-cache.get(1)    # return None (not found)
-cache.get(3)    # return 3
-cache.get(4)    # return 4
+cache.put(1, 10)      # cache is [(1, 10)]
+cache.put(2, 20)      # cache is [(2, 20), (1, 10)]
+cache.get(1)          # return 10, cache is [(1, 10), (2, 20)]
+cache.put(3, 30)      # cache is [(3, 30), (1, 10)]
+cache.get(2)          # return None, cache is [(3, 30), (1, 10)]
+cache.put(4, 40)      # cache is [(4, 40), (3, 30)]
+cache.get(1)          # return None, cache is [(4, 40), (3, 30)]
+cache.get(3)          # return 30, cache is [(3, 30), (4, 40)]
+cache.get(4)          # return 40, cache is [(4, 40), (3, 30)]
+cache.put(3, 300)     # cache is [(3, 300), (4, 40)]
+cache.put(3, 3)       # cache is [(3, 30), (4, 40)]
 ```
