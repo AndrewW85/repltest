@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-Kevala Infrastructure Team Interview Challenge - Software Engineer
+Demo Infrastructure Team Interview Challenge - Software Engineer
 
 Instructions for your coding challenge are presented in the README.md file
 
@@ -34,3 +34,4 @@ if __name__ == "__main__":
     print("Starting main.py")
     main()
     print("Done")
+
