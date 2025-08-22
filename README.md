@@ -1,4 +1,4 @@
-# Kevala Infrastructure Team Coding Challenge
+# Coding Challenge Example
 
 Your coding challenge is described below. Do your best to complete these tasks in the alloted time. If you have any questions about the task, you are free to ask for clarification. 
 
